@@ -31,3 +31,32 @@ WHERE Name = 'Basma';
 UPDATE students
 SET Points = 150
 WHERE Name = 'Alex';
+
+
+
+#######################################
+
+# Creating Table
+
+CREATE TABLE "Graduates" (
+"ID" INTEGER,
+"Name" TEXT NOT NULL UNIQUE,
+"Age" INTEGER,
+"Gender" TEXT,
+"Points" INTEGER,
+"Graduation" DATE,
+PRIMARY KEY ("ID" AUTOINCREMENT)
+);
+
+
+# Copy Layal's data from students to graduates
+
+INSERT INTO Graduates (Name, Age, Gender, Points, Graduation)
+SELECT Name, Age, Gender, Points, '08/8/2018' FROM students
+WHERE ID = 4;
+
+
+# Remove Layal's record from students
+
+DELETE FROM students
+WHERE ID = 4;
