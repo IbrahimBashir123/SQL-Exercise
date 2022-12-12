@@ -80,3 +80,31 @@ SELECT companies.Name
 FROM companies
 LEFT JOIN employees on companies.Name = employees.Company
 WHERE employees.Role = "Graphic Designer";
+
+#######################################
+
+#Count & Filter
+
+#.1 
+SELECT name, Points
+FROM students
+WHERE Points = ( SELECT MAX("points") FROM students);
+
+#.2
+SELECT AVG(Points)
+FROM students;
+
+#.3
+SELECT COUNT(Points)
+FROM students
+WHERE Points = 500;
+
+#.4
+SELECT  Count("name")
+FROM students
+WHERE Name LIKE "%s%"
+
+#.5
+SELECT "name"
+From students
+ORDER  BY "points" DESC;
