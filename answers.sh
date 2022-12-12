@@ -60,3 +60,23 @@ WHERE ID = 4;
 
 DELETE FROM students
 WHERE ID = 4;
+
+
+#joins
+
+#.1 
+SELECT employees.Name, companies.Name, companies.Date
+From employees
+LEFT JOIN companies ON employees.Company = companies.Name;
+
+#.2
+SELECT employees.name, companies.Date
+FROM employees
+LEFT JOIN companies on employees.Company = companies.Name
+WHERE companies.Date < 2000;
+
+#.3
+SELECT companies.Name
+FROM companies
+LEFT JOIN employees on companies.Name = employees.Company
+WHERE employees.Role = "Graphic Designer";
